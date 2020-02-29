@@ -5,5 +5,11 @@
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=================================================
-# Modify default IP
-sed -i 's/192.168.1.1/192.168.123.99/g' package/base-files/files/bin/config_generate
+#自定义插件
+git clone https://github.com/openwrt-develop/luci-theme-atmaterial package/luci-theme-atmaterial
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+
+#更新feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
